@@ -17,10 +17,14 @@ cv2.imshow('Blurred Image', blur)
 edges = cv2.Canny(img, 100, 100)
 cv2.imshow('Canny Image', edges)
 
-# Increase the thisckness of the edges so that the lines can be joined well
+# Increase the thickness of the edges so that the lines can be joined well
 kernel = np.ones((3,3),np.uint8)
 dialation = cv2.dilate(edges, kernel, iterations=1)
 cv2.imshow('Dilated Image', dialation)
+
+# Decreasing the thickness of the edges in the image
+eroded = cv2.erode(dialation, kernel, iterations=1)
+cv2.imshow('Eroded Image', eroded)
 
 # Waiting the process for the infinite time
 cv2.waitKey(0)
