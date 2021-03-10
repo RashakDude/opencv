@@ -5,7 +5,7 @@ from stackImages import stackImages
 
 # Defining the function to find the contours
 def getContours(img):
-    contours, hierarchy = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours, _ = cv2.findContours(img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     
     for contour in contours:
         # Finding the area     
